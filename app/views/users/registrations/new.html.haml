@@ -4,25 +4,26 @@
   url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: 'email'
+    = f.label :email, class: 'label'
+    .control
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input'
   .field
-    = f.label :taxvat
-    %br/
-    = f.text_field :taxvat, autocomplete: 'taxvat'
+    = f.label :taxvat, class: 'label'
+    .control
+      = f.text_field :taxvat, autocomplete: 'taxvat', class: 'input'
   .field
-    = f.label :password
+    = f.label :password, class: 'label'
     - if @minimum_password_length
       %em
         = t('devise.shared.minimum_password_length',
           count: @minimum_password_length)
-    %br/
-    = f.password_field :password, autocomplete: 'off'
+    .control
+      = f.password_field :password, autocomplete: 'off', class: 'input'
   .field
-    = f.label :password_confirmation
+    = f.label :password_confirmation, class: 'label'
     %br/
-    = f.password_field :password_confirmation, autocomplete: 'off'
+    .control
+      = f.password_field :password_confirmation, autocomplete: 'off', class: 'input'
   .actions
     = f.submit t('.sign_up')
 = render 'users/shared/links'

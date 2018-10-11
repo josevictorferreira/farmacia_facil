@@ -8,4 +8,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .columns.is-multiline.is-mobile.is-centered
+      .column.is-three-quarters
+        = render 'header'
+        = yield
+        = render 'footer'
