@@ -27,7 +27,11 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+gem 'jquery-rails'
+
+gem 'rails-i18n', '~> 5.1'
 gem 'devise', '~> 4.5.0'
+gem 'devise-i18n'
 
 gem 'cpf_cnpj'
 # Use Redis adapter to run Action Cable in production
@@ -57,6 +61,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'haml_lint', require: false
+  gem 'rubocop', '~> 0.59.2', require: false
+  gem 'xray-rails'
 end
 
 group :test do
