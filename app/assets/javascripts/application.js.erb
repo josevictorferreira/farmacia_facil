@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery
 //= require jquery.mask
-//= require xray
 //= require main
+<% if Rails.env.development? %>
+//= require xray
+<% end %>
 //= require_tree .
