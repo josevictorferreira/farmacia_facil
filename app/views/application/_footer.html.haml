@@ -1,11 +1,4 @@
 %footer.footer
   .content.has-text-centered
     %p
-      %strong Bulma
-      by
-      = succeed "." do
-        %a{:href => "https://jgthms.com"} Jeremy Thomas
-      = succeed "." do
-        %a{:href => "http://opensource.org/licenses/mit-license.php"} MIT
-      = succeed "." do
-        %a{:href => "http://creativecommons.org/licenses/by-nc-sa/4.0/"} CC BY NC SA 4.0
+      = raw(t('footer.text'))

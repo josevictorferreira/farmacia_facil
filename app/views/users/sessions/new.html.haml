@@ -1,17 +1,23 @@
-%h2= t('.sign_in')
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit t('.sign_in')
-= render "users/shared/links"
+= content_for :title do
+  = t('.sign_in')
+= content_for :subtitle do
+  = raw(t('.not_registered'))
+.columns
+  .column.is-three-fifths-desktop
+    = form_for(resource,
+      as: resource_name,
+      builder: BulmaFormBuilder,
+      url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me, class: 'checkbox'
+      .actions
+        = f.submit t('.sign_in')
+    = render "users/shared/links"

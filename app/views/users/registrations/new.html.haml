@@ -2,29 +2,32 @@
   = t('.sign_up')
 = content_for :subtitle do
   = raw(t('.already_registered'))
-= form_for(resource,
-  as: resource_name,
-  builder: BulmaFormBuilder,
-  url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    = f.email_field :email, autofocus: true, autocomplete: 'email'
-  .field
-    = f.label :taxvat
-    = f.text_field :taxvat, autocomplete: 'taxvat'
-  .field
-    = f.label :password
-    = f.password_field :password, autocomplete: 'off'
-    - if @minimum_password_length
-      %p.help
-        = t('devise.shared.minimum_password_length',
-          count: @minimum_password_length)
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation, autocomplete: 'off'
-  .control
-    = f.submit t('.sign_up'), class: 'button is-primary'
+.columns
+  .column.is-three-fifths-desktop
+    = form_for(resource,
+      as: resource_name,
+      builder: BulmaFormBuilder,
+      url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: 'email'
+      .field
+        = f.label :taxvat
+        = f.text_field :taxvat, autocomplete: 'taxvat'
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off'
+        - if @minimum_password_length
+          %p.help
+            = t('devise.shared.minimum_password_length',
+              count: @minimum_password_length)
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off'
+      .control
+        = f.submit t('.sign_up'), class: 'button is-primary'
+    = render 'users/shared/links'
 
 :javascript
   var options = {

@@ -11,6 +11,14 @@ class BulmaFormBuilder < ActionView::Helpers::FormBuilder
     super(method, text, insert_class('label', options), &block)
   end
 
+  def check_box(method, options = {})
+    super(method, insert_class('checkbox', options))
+  end
+
+  def submit(method, options = {})
+    super(method, insert_class('button is-primary', options))
+  end
+
   private
 
   def insert_class(class_name, options)
