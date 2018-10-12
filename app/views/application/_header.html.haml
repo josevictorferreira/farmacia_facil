@@ -9,7 +9,7 @@
   #navbarBasicExample.navbar-menu
     .navbar-start
       %a.navbar-item
-        Home
+        = fa_icon 'home fw', text: 'Home'
       %a.navbar-item
         Documentation
       .navbar-item.has-dropdown.is-hoverable
@@ -30,8 +30,10 @@
         .navbar-item
           .buttons
             %a{ href: '/users/sign_up', class: 'button is-primary' }
+              = fa_icon 'user-plus fw'
               %strong= t('users.registrations.new.sign_up')
             %a{ href: '/users/sign_in', class: 'button is-light' }
+              = fa_icon 'sign-in fw'
               = t('users.sessions.new.sign_in')
       - else
         .navbar-item.has-dropdown.is-hoverable
@@ -39,8 +41,12 @@
             = current_user.email
           .navbar-dropdown
             %a.navbar-item
-              =t('shared.help')
+              = fa_icon 'question-circle fw'
+              = t('shared.help')
             %a{ href: '/users/edit', class: 'navbar-item' }
-              =t('shared.profile')
+              = fa_icon 'user fw'
+              = t('shared.profile')
             %hr.navbar-divider
-            = link_to(t('users.sessions.logout'), destroy_user_session_path, method: :delete, class: 'navbar-item')
+            %a{ href: '/users/sign_out', class: 'navbar-item', data: { method: :delete } }
+              = fa_icon 'sign-out fw'
+              = t('users.sessions.logout')
