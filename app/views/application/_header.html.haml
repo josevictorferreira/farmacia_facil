@@ -28,7 +28,7 @@
     .navbar-end
       .navbar-item
         .buttons
-          %a.button.is-primary
-            %strong Sign up
-          %a.button.is-light
-            Log in
+          %a{ href: '/users/sign_up', class: 'button is-primary' }
+            %strong= t('users.registrations.new.sign_up')
+          %a{ href: '/users/sign_in', class: 'button is-light' }
+            = t('users.sessions.new.sign_in')

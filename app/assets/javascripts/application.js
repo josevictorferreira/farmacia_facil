@@ -14,5 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery.mask
 //= require xray
+//= require main
 //= require_tree .

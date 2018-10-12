@@ -10,7 +10,7 @@ class User < ApplicationRecord
   protected
 
   def taxvat_exist
-    errors.add(:taxvat, 'Invalid identification.') unless
+    errors.add(:taxvat, I18n.t('users.registrations.new.error.taxvat_invalid')) unless
       CPF.valid?(taxvat) || CNPJ.valid?(taxvat)
   end
 end

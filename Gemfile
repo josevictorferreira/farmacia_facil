@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 
+gem 'jquery_mask_rails', '~> 0.1.0'
+
 gem 'rails-i18n', '~> 5.1'
 gem 'devise', '~> 4.5.0'
 gem 'devise-i18n'

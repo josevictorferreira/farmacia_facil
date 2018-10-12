@@ -4,4 +4,9 @@ pt-BR:
     attributes:
       user:
         taxvat: "CPF ou CNPJ"
-  hello: "Teste"
+  users:
+    registrations:
+      new:
+        already_registered: "Já está registrado? Tente realizar o <a href=\"/users/sign_in\">login</a>."
+        error:
+          taxvat_invalid: "Inválido."
