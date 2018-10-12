@@ -26,9 +26,21 @@
           %a.navbar-item
             Report an issue
     .navbar-end
-      .navbar-item
-        .buttons
-          %a{ href: '/users/sign_up', class: 'button is-primary' }
-            %strong= t('users.registrations.new.sign_up')
-          %a{ href: '/users/sign_in', class: 'button is-light' }
-            = t('users.sessions.new.sign_in')
+      - unless user_signed_in?
+        .navbar-item
+          .buttons
+            %a{ href: '/users/sign_up', class: 'button is-primary' }
+              %strong= t('users.registrations.new.sign_up')
+            %a{ href: '/users/sign_in', class: 'button is-light' }
+              = t('users.sessions.new.sign_in')
+      - else
+        .navbar-item.has-dropdown.is-hoverable
+          %a.navbar-link
+            = current_user.email
+          .navbar-dropdown
+            %a.navbar-item
+              =t('shared.help')
+            %a{ href: '/users/edit', class: 'navbar-item' }
+              =t('shared.profile')
+            %hr.navbar-divider
+            = link_to(t('users.sessions.logout'), destroy_user_session_path, method: :delete, class: 'navbar-item')

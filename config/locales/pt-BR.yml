@@ -10,8 +10,15 @@ pt-BR:
         already_registered: "<a href=\"/users/sign_in\">Já está registrado? Tente realizar o login</a>."
         error:
           taxvat_invalid: "Inválido."
+      edit:
+        edit_profile: "Editar Perfil"
+        edit_profile_description: "Altere informações sobre você."
     sessions:
       new:
         not_registered : "<a href=\"/users/sign_up\">Não está inscrito ainda? Tente inscrever-se.</a>"
+      logout: "Sair"
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
+  shared:
+    profile: 'Perfil'
+    help: 'Ajuda'
