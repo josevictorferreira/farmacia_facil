@@ -9,6 +9,12 @@
   html: { method: :put }) do |f|
   = devise_error_messages!
   .field
+    = f.label :first_name
+    = f.text_field :first_name, autofocus: true, autocomplete: "first_name"
+  .field
+    = f.label :last_name
+    = f.text_field :last_name, autocomplete: "last_name"
+  .field
     = f.label :email
     = f.email_field :email, autofocus: true, autocomplete: "email"
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?

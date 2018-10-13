@@ -5,7 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :taxvat, uniqueness: true
+  validates :first_name, :last_name, presence: true
   validate :taxvat_exist
+
+  def name
+    first_name + ' ' + last_name
+  end
 
   protected
 

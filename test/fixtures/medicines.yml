@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  targe: MyString
+  leaflet: MyString
+  doctor_prescription: false
+
+two:
+  name: MyString
+  targe: MyString
+  leaflet: MyString
+  doctor_prescription: false
