@@ -34,6 +34,13 @@ en:
     attributes:
       user:
         taxvat: "Taxvat"
+        first_name: "First Name"
+        last_name: "Last Name"
+      medicine:
+        name: "Name"
+        targe: "Tarje"
+        leaflet: "Package Leaflet"
+        doctor_prescription: "Need Doctor Prescription?"
   users:
     registrations:
       new:

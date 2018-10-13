@@ -4,6 +4,15 @@ pt-BR:
     attributes:
       user:
         taxvat: "CPF ou CNPJ"
+        first_name: "Nome"
+        last_name: "Sobrenome"
+      medicine:
+        name: "Nome"
+        targe: "Tarja"
+        leaflet: "Bula"
+        doctor_prescription: "Necessário Prescrição Médica?"
+    models:
+      medicine: "Remédio"
   users:
     registrations:
       new:
