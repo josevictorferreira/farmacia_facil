@@ -1,0 +1,44 @@
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.already_registered'))
+.columns
+  .column.is-three-fifths-desktop
+    = form_for(@user,
+      as: @resource_name,
+      builder: BulmaFormBuilder,
+      url: drugstores_registrations_sign_up_path(@resource_name)) do |f|
+      .field
+        = f.label :first_name, t('activerecord.attributes.drugstore.first_name')
+        = f.text_field :first_name, autofocus: true, autocomplete: 'first_name'
+      .field
+        = f.label :last_name, t('activerecord.attributes.drugstore.last_name')
+        = f.text_field :last_name, autocomplete: 'first_name'
+      .field
+        = f.label :email
+        = f.email_field :email, autocomplete: 'email'
+      .field
+        = f.label :taxvat, t('activerecord.attributes.drugstore.taxvat')
+        = f.text_field :taxvat, autocomplete: 'taxvat'
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off'
+        - if @minimum_password_length
+          %p.help
+            = t('devise.shared.minimum_password_length',
+              count: @minimum_password_length)
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off'
+      .control
+        = f.submit t('.sign_up'), class: 'button is-primary'
+
+:javascript
+  var options = {
+      onKeyPress: function (cpf, ev, el, op) {
+          var masks = ['000.000.000-000', '00.000.000/0000-00'];
+          $('#user_taxvat').mask((cpf.length > 14) ? masks[1] : masks[0], op);
+      }
+  }
+
+  $('#user_taxvat').mask('00.000.000/0000-00', options);
