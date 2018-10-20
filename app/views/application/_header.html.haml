@@ -8,23 +8,8 @@
       %span{"aria-hidden" => "true"}
   #navbarBasicExample.navbar-menu
     .navbar-start
-      %a.navbar-item
-        = fa_icon 'home fw', text: 'Home'
-      %a.navbar-item
-        Documentation
-      .navbar-item.has-dropdown.is-hoverable
-        %a.navbar-link
-          More
-        .navbar-dropdown
-          %a.navbar-item
-            About
-          %a.navbar-item
-            Jobs
-          %a.navbar-item
-            Contact
-          %hr.navbar-divider/
-          %a.navbar-item
-            Report an issue
+      %a.navbar-item{ href: root_path }
+        = fa_icon 'home fw', text: t('shared.home')
     .navbar-end
       - unless user_signed_in?
         .navbar-item
