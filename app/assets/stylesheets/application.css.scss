@@ -16,3 +16,10 @@
 
 @import "bulma";
 @import "font-awesome";
+
+.navbar-desktop {
+    @media screen and (min-width: 1200px) {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
