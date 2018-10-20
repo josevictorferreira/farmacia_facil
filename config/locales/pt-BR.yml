@@ -3,9 +3,13 @@ pt-BR:
   activerecord:
     attributes:
       user:
-        taxvat: "CPF ou CNPJ"
+        taxvat: "CPF"
         first_name: "Nome"
         last_name: "Sobrenome"
+      drugstore:
+        first_name: "Nome Fantasia"
+        last_name: "Nome da Empresa"
+        taxvat: "CNPJ"
       medicine:
         name: "Nome"
         targe: "Tarja"
@@ -26,6 +30,11 @@ pt-BR:
       new:
         not_registered : "<a href=\"/users/sign_up\">Não está inscrito ainda? Tente inscrever-se.</a>"
       logout: "Sair"
+  drugstores:
+    new:
+      title: "Cadastro de usuário para a sua farmácia"
+      sign_up: "Inscrever-se"
+      already_registered: "<a href=\"/users/sign_in\">Já está registrado? Tente realizar o login</a>."
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:

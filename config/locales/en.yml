@@ -36,6 +36,10 @@ en:
         taxvat: "Taxvat"
         first_name: "First Name"
         last_name: "Last Name"
+      drugstore:
+        first_name: "Company Name"
+        last_name: "Registered Company Name"
+        taxvat: "Taxvat"
       medicine:
         name: "Name"
         targe: "Tarje"
@@ -54,6 +58,11 @@ en:
       new:
         not_registered : "<a href=\"/users/sign_up\">Not registered yet? Try to sign up.</a>"
       logout: "Sair"
+  drugstores:
+    new:
+      title: "New user for your drugstore"
+      sign_up: "Sign up"
+      already_registered: "<a href=\"users/sign_in\">Already registered? Try to sign in</a>."
   footer:
     text: "<b>FarmáciaFácil</b> by <a href=\"/jose_linkedin\">José Victor Ferreira</a> and <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
