@@ -37,6 +37,7 @@ pt-BR:
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
+    edit_profile: "Editar Perfil"
     profile: 'Perfil'
     help: 'Ajuda'
     points: "Pontos"
