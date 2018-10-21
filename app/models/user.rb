@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :assign_default_role
+  after_create :assign_default_role, :create_wallet
 
   validates :taxvat, uniqueness: true
   validates :first_name, :last_name, presence: true
