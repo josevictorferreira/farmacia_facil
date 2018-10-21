@@ -54,15 +54,14 @@ en:
       edit:
         edit_profile: "Edit Profile"
         edit_profile_description: "Edit information about you."
+      drugstore_register_new:
+        title: "New user for your drugstore"
+        sign_up: "Sign up"
+        already_registered: "<a href=\"users/sign_in\">Already registered? Try to sign in</a>."
     sessions:
       new:
         not_registered : "<a href=\"/users/sign_up\">Not registered yet? Try to sign up.</a>"
       logout: "Sair"
-  drugstores:
-    new:
-      title: "New user for your drugstore"
-      sign_up: "Sign up"
-      already_registered: "<a href=\"users/sign_in\">Already registered? Try to sign in</a>."
   footer:
     text: "<b>FarmáciaFácil</b> by <a href=\"/jose_linkedin\">José Victor Ferreira</a> and <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:

@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validate :taxvat_exist
 
   def name
-    first_name + ' ' + last_name
+    has_role?(:drugstore) ? first_name : first_name + ' ' + last_name
   end
 
   def assign_default_role

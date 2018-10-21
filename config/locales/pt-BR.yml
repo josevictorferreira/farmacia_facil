@@ -26,15 +26,14 @@ pt-BR:
       edit:
         edit_profile: "Editar Perfil"
         edit_profile_description: "Altere informações sobre você."
+      drugstore_register_new:
+        title: "Cadastro de usuário para a sua farmácia"
+        sign_up: "Inscrever-se"
+        already_registered: "<a href=\"/users/sign_in\">Já está registrado? Tente realizar o login</a>."
     sessions:
       new:
         not_registered : "<a href=\"/users/sign_up\">Não está inscrito ainda? Tente inscrever-se.</a>"
       logout: "Sair"
-  drugstores:
-    new:
-      title: "Cadastro de usuário para a sua farmácia"
-      sign_up: "Inscrever-se"
-      already_registered: "<a href=\"/users/sign_in\">Já está registrado? Tente realizar o login</a>."
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:

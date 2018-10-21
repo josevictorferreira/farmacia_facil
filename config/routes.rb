@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
-  get 'drugstores/registrations/sign_up', to: 'drugstores#new'
-  post 'drugstores/registrations/sign_up', to: 'drugstores#create'
+  devise_scope :user do
+    get 'drugstores/sign_up' => "users/registrations#drugstore_register_new"
+    post 'drugstores/sign_up' => "users/registrations#drugstore_register_create"
+  end
   devise_for :users,
     controllers: { registrations: 'users/registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
