@@ -1,0 +1,19 @@
+= f.fields_for :address, resource.address do |address_form|
+  .field
+    = address_form.label :country
+    = address_form.text_field :country
+  .field
+    = address_form.label :zipcode
+    = address_form.text_field :zipcode
+  .field
+    = address_form.label :state
+    = address_form.text_field :state
+  .field
+    = address_form.label :city
+    = address_form.text_field :city
+  .field
+    = address_form.label :street
+    = address_form.text_field :street
+  .field
+    = address_form.label :number
+    = address_form.text_field :number

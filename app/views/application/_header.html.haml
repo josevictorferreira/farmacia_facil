@@ -21,11 +21,12 @@
               = fa_icon 'sign-in fw'
               = t('users.sessions.new.sign_in')
       - else
-        .navbar-item
-          #{t('shared.points')}:
-          &nbsp
-          %strong.has-text-success
-            = current_user.wallet.balance
+        - unless current_user.wallet.nil?
+          .navbar-item
+            #{t('shared.points')}:
+            &nbsp
+            %strong.has-text-success
+              = current_user.wallet.balance
         .navbar-item.has-dropdown.is-hoverable
           %a.navbar-link
             = current_user.name

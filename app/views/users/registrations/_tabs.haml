@@ -1,0 +1,13 @@
+= javascript_include_tag 'users/registrations/tabs_handler'
+.tabs.is-boxed
+  %ul
+    %li.is-active#personal-tab
+      %a
+        = fa_icon 'user-plus fw'
+        %span
+          = t('users.registrations.new.general_data')
+    %li#address-tab
+      %a
+        = fa_icon 'address-card fw'
+        %span
+          = t('activerecord.models.address')

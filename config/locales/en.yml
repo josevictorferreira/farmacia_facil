@@ -41,10 +41,21 @@ en:
         targe: "Tarje"
         leaflet: "Package Leaflet"
         doctor_prescription: "Need Doctor Prescription?"
+      address:
+        country: "Country"
+        state: "State"
+        city: "City"
+        street: "Street"
+        number: "Number"
+        zipcode: "Zip Code"
+    models:
+      medicine: "Medicine"
+      address: "Address"
   users:
     registrations:
       new:
         already_registered: "<a href=\"users/sign_in\">Already registered? Try to sign in</a>."
+        general_data: "General Data"
         error:
           taxvat_invalid: "Invalid."
       edit:
