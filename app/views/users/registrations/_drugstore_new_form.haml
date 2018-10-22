@@ -1,0 +1,22 @@
+.field
+  = f.label :first_name, t('activerecord.attributes.drugstore.first_name')
+  = f.text_field :first_name, autofocus: true, autocomplete: 'first_name'
+.field
+  = f.label :last_name, t('activerecord.attributes.drugstore.last_name')
+  = f.text_field :last_name, autocomplete: 'first_name'
+.field
+  = f.label :email
+  = f.email_field :email, autocomplete: 'email'
+.field
+  = f.label :taxvat, t('activerecord.attributes.drugstore.taxvat')
+  = f.text_field :taxvat, autocomplete: 'taxvat'
+.field
+  = f.label :password
+  = f.password_field :password, autocomplete: 'off'
+  - if @minimum_password_length
+    %p.help
+      = t('devise.shared.minimum_password_length',
+        count: @minimum_password_length)
+.field
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation, autocomplete: 'off'

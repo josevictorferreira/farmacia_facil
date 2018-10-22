@@ -12,7 +12,7 @@
   #personal-form
     = render 'edit_form', f: f
   #address-form{ style: "display: none;" }
-    = render 'address', resource: resource, f: f
+    = render 'address', address: @address, f: f
   %br/
   .actions
     = f.submit t('.update')

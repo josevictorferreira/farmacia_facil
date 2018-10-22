@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validate :taxvat_exist
 
-  has_one :wallet
-  has_one :address
+  has_one :wallet, dependent: :destroy
+  has_one :address, dependent: :destroy
 
   accepts_nested_attributes_for :address
 

@@ -2,7 +2,18 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
+  def new
+    @address = Address.new
+    super
+  end
+
+  def edit
+    @address = resource.address || Address.new
+    super
+  end
+
   def drugstore_register_new
+    @address = Address.new
     build_resource
     yield resource if block_given?
     respond_with resource
@@ -20,8 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to root_path
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
-        expire_data_after_sign_in!
-        redirect_to root_path
+        expire_data_after_sign_in!  redirect_to root_path
       end
     else
       clean_up_passwords resource
@@ -40,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :password,
       :password_confirmation,
       :current_password,
-      address: [
+      address_attributes: [
         :country,
         :zipcode,
         :state,
@@ -58,7 +68,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :password,
       :password_confirmation,
       :first_name,
-      :last_name
+      :last_name,
+      address_attributes: [
+        :country,
+        :zipcode,
+        :state,
+        :city,
+        :street,
+        :number
+      ]
     )
   end
 end
