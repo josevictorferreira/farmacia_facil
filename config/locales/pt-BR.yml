@@ -15,12 +15,21 @@ pt-BR:
         targe: "Tarja"
         leaflet: "Bula"
         doctor_prescription: "Necessário Prescrição Médica?"
+      address:
+        country: "País"
+        state: "Estado"
+        city: "Cidade"
+        street: "Nome da Rua"
+        number: "Número"
+        zipcode: "CEP"
     models:
       medicine: "Remédio"
+      address: "Endereço"
   users:
     registrations:
       new:
         already_registered: "<a href=\"/users/sign_in\">Já está registrado? Tente realizar o login</a>."
+        general_data: "Dados Gerais"
         error:
           taxvat_invalid: "Inválido."
       edit:

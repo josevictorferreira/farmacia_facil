@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -12,6 +11,9 @@ class User < ApplicationRecord
   validate :taxvat_exist
 
   has_one :wallet
+  has_one :address
+
+  accepts_nested_attributes_for :address
 
   def name
     has_role?(:drugstore) ? first_name : first_name + ' ' + last_name
@@ -24,6 +26,7 @@ class User < ApplicationRecord
   end
 
   def create_wallet
+    raise has_role?(:drugstore).inspect
     self.wallet = Wallet.create(balance: 0) unless has_role?(:drugstore)
     self.wallet = Wallet.create(balance: 1000) if has_role?(:drugstore)
     save
