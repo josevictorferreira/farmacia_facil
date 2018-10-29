@@ -26,7 +26,6 @@ class User < ApplicationRecord
   end
 
   def create_wallet
-    raise has_role?(:drugstore).inspect
     self.wallet = Wallet.create(balance: 0) unless has_role?(:drugstore)
     self.wallet = Wallet.create(balance: 1000) if has_role?(:drugstore)
     save

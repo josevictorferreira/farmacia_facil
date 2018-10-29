@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def drugstore_register_new
     @address = Address.new
+    @minimum_password_length = 6
     build_resource
     yield resource if block_given?
     respond_with resource
