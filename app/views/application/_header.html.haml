@@ -21,14 +21,20 @@
               = fa_icon 'sign-in fw'
               = t('users.sessions.new.sign_in')
       - else
+        - if current_user.has_role? :consumer
+          .navbar-item
+            = fa_icon 'donate fw'
+            = "Anunciar Doação"
         - unless current_user.wallet.nil?
           .navbar-item
+            = fa_icon 'hand-holding-usd fw'
             #{t('shared.points')}:
             &nbsp
             %strong.has-text-success
               = current_user.wallet.balance
         .navbar-item.has-dropdown.is-hoverable
           %a.navbar-link
+            = fa_icon 'user fw'
             = current_user.name
           .navbar-dropdown
             %a.navbar-item
@@ -39,5 +45,5 @@
               = t('shared.edit_profile')
             %hr.navbar-divider
             %a{ href: '/users/sign_out', class: 'navbar-item', data: { method: :delete } }
-              = fa_icon 'sign-out fw'
+              = fa_icon 'sign-out-alt fw'
               = t('users.sessions.logout')
