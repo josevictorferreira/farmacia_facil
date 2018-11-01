@@ -24,7 +24,7 @@ gem "haml-rails", "~> 1.0"
 
 gem "bulma-rails", "~> 0.7.1"
 
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'rails_admin', '~> 1.3'
 

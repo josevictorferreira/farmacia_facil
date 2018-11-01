@@ -13,7 +13,8 @@
  */
 
 @import "bulmaswatch.min.scss";
-@import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome-5";
 
 .navbar-desktop {
     @media screen and (min-width: 1200px) {
