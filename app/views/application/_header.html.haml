@@ -22,9 +22,9 @@
               = t('users.sessions.new.sign_in')
       - else
         - if current_user.has_role? :consumer
-          .navbar-item
+          %a.navbar-item{ href: new_donation_path }
             = fa_icon 'donate fw'
-            = "Anunciar Doação"
+            = t('shared.new_donation')
         - unless current_user.wallet.nil?
           .navbar-item
             = fa_icon 'hand-holding-usd fw'

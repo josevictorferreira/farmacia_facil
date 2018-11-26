@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @donation.description
+%p
+  %b Quantity:
+  = @donation.quantity
+%p
+  %b Shelf life:
+  = @donation.shelf_life
+%p
+  %b Has packing:
+  = @donation.has_packing
+
+= link_to 'Edit', edit_donation_path(@donation)
+\|
+= link_to 'Back', donations_path

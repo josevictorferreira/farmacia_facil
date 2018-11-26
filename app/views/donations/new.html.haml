@@ -1,0 +1,8 @@
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
+
+= render 'form'
+
+= link_to t('shared.back'), donations_path

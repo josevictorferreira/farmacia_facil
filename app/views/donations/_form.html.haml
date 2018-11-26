@@ -1,0 +1,27 @@
+= form_for @donation,
+    builder: BulmaFormBuilder do |f|
+  - if @donation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@donation.errors.count, "error")} prohibited this donation from being saved:"
+      %ul
+        - @donation.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :medicine
+    .control
+      .select
+        = f.collection_select :medicine_id, Medicine.all, :id, :name, class: 'select'
+  .field
+    = f.label :quantity
+    = f.number_field :quantity
+  .field
+    = f.label :shelf_life
+    = f.date_select :shelf_life
+  .field
+    = f.check_box :has_packing
+    = f.label :has_packing, class: 'checkbox'
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit t('shared.save')
