@@ -52,6 +52,16 @@ pt-BR:
     new:
       title: "Nova Doação"
       subtitle: "Anuncie uma nova doação de medicamento."
+    edit:
+      title: "Editar Doação"
+      subtitle: "Editar uma oferta de doação."
+    index:
+      title: "Doações Anunciadas"
+      subtitle: "Lista de todas as suas doações anunciadas."
+    show:
+      title: "Informações da Doação"
+      subtitle: "Lista de todas as informações da doação."
+    my_donations: "Minhas Doações"
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
@@ -63,3 +73,9 @@ pt-BR:
     new_donation: "Anunciar Doação"
     save: "Salvar"
     back: "Voltar"
+    show: "Mostrar"
+    edit: "Editar"
+    destroy: "Remover"
+    are_you_sure: "Você tem certeza?"
+    "yes": "Sim"
+    "no": "Não"

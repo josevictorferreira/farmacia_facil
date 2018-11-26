@@ -37,6 +37,10 @@
             = fa_icon 'user fw'
             = current_user.name
           .navbar-dropdown
+            - if current_user.has_role? :consumer
+              %a.navbar-item{ href: donations_path, class: 'navbar-item' }
+                = fa_icon 'donate fw'
+                = t('donations.my_donations')
             %a.navbar-item
               = fa_icon 'question-circle fw'
               = t('shared.help')

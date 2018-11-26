@@ -1,18 +1,37 @@
-%p#notice= notice
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
 
+%p#notice= notice
 %p
-  %b Description:
+  %b
+    = t('activerecord.models.medicine')
+    = ":"
+  = @donation.medicine_name
+%p
+  %b
+    = t('activerecord.attributes.donation.description')
+    = ":"
   = @donation.description
 %p
-  %b Quantity:
+  %b
+    = t('activerecord.attributes.donation.quantity')
+    = ":"
   = @donation.quantity
 %p
-  %b Shelf life:
+  %b
+    = t('activerecord.attributes.donation.shelf_life')
+    = ":"
   = @donation.shelf_life
 %p
-  %b Has packing:
-  = @donation.has_packing
+  %b
+    = t('activerecord.attributes.donation.has_packing')
+    = ":"
+  = human_boolean(@donation.has_packing)
 
-= link_to 'Edit', edit_donation_path(@donation)
+%br
+
+= link_to t('shared.edit'), edit_donation_path(@donation)
 \|
-= link_to 'Back', donations_path
+= link_to t('shared.back'), donations_path

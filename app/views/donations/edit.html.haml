@@ -1,7 +1,11 @@
-%h1 Editing donation
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
 
 = render 'form'
 
-= link_to 'Show', @donation
+%br/
+= link_to t('shared.show'), @donation
 \|
-= link_to 'Back', donations_path
+= link_to t('shared.back'), donations_path

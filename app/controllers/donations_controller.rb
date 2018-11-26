@@ -1,10 +1,11 @@
 class DonationsController < ApplicationController
+  before_action :must_be_consumer
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
 
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all
+    @donations = Donation.where("user_id = :user_id", { user_id: current_user.id })
   end
 
   # GET /donations/1
@@ -72,5 +73,11 @@ class DonationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
       params.require(:donation).permit(:description, :quantity, :shelf_life, :has_packing, :medicine_id)
+    end
+
+    def must_be_consumer
+      unless current_user && authorized_for_roles(:admin, :consumer)
+        raise CanCan::AccessDenied
+      end
     end
 end

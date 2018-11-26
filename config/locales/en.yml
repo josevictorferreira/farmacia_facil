@@ -52,6 +52,16 @@ en:
     new:
       title: "New Donation"
       subtitle: "Create a new medicine donation offer."
+    edit:
+      title: "Edit Donation"
+      subtitle: "Edit an donation offer."
+    index:
+      title: "Donations Placed"
+      subtitle: "List of all donations placed."
+    show:
+      title: "Donation Info"
+      subtitle: "List of all donation informations."
+    my_donations: "My Donations"
   footer:
     text: "<b>FarmáciaFácil</b> by <a href=\"/jose_linkedin\">José Victor Ferreira</a> and <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
@@ -63,3 +73,9 @@ en:
     new_donation: "New Donation"
     save: "Save"
     back: "Back"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    are_you_sure: "Are you sure?"
+    "yes": "Yes"
+    "no": "No"

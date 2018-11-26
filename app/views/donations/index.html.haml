@@ -1,12 +1,16 @@
-%h1 Listing donations
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
 
-%table
+%table.table.is-striped.is-hoverable.is-fullwidth
   %thead
     %tr
-      %th Description
-      %th Quantity
-      %th Shelf life
-      %th Has packing
+      %th= t('activerecord.models.medicine')
+      %th= t('activerecord.attributes.donation.description')
+      %th= t('activerecord.attributes.donation.quantity')
+      %th= t('activerecord.attributes.donation.shelf_life')
+      %th= t('activerecord.attributes.donation.has_packing')
       %th
       %th
       %th
@@ -14,14 +18,15 @@
   %tbody
     - @donations.each do |donation|
       %tr
+        %td= donation.medicine_name
         %td= donation.description
         %td= donation.quantity
         %td= donation.shelf_life
-        %td= donation.has_packing
-        %td= link_to 'Show', donation
-        %td= link_to 'Edit', edit_donation_path(donation)
-        %td= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= human_boolean(donation.has_packing)
+        %td= link_to t('shared.show'), donation
+        %td= link_to t('shared.edit'), edit_donation_path(donation)
+        %td= link_to t('shared.destroy'), donation, method: :delete, data: { confirm: t('shared.are_you_sure') }
 
 %br
 
-= link_to 'New Donation', new_donation_path
+= link_to t('donations.new.title'), new_donation_path
