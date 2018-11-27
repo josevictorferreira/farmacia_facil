@@ -11,22 +11,25 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'header'
-    %section.hero.is-primary.is-bold
-      .hero-body
-        .container
-          %h1.title
-            = yield :title
-          %h2.subtitle
-            = yield :subtitle
+    - unless current_page?(root_path)
+      %section.hero.is-primary.is-bold
+        .hero-body
+          .container
+            %h1.title
+              = yield :title
+            %h2.subtitle
+              = yield :subtitle
 
 
-    .columns.is-mobile.is-centered
-      .column.is-three-quarters-desktop
-        %section.section
-          - flash.each do |key, value|
-            .notification{ :class => "is-#{key}" }
-              %button.delete{ :data => { :dismiss => "alert" } } x
-              %strong
-                = value
-          = yield
+      .columns.is-mobile.is-centered
+        .column.is-three-quarters-desktop
+          %section.section
+            - flash.each do |key, value|
+              .notification{ :class => "is-#{key}" }
+                %button.delete{ :data => { :dismiss => "alert" } } x
+                %strong
+                  = value
+            = yield
+    - else
+      = yield
     = render 'footer'
