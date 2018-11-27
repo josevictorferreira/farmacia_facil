@@ -1,15 +1,13 @@
 %nav.navbar-desktop.navbar{"aria-label" => "main navigation", :role => "navigation"}
   .navbar-brand
-    %a.navbar-item{:href => "https://bulma.io"}
-      %img{:height => "28", :src => "https://bulma.io/images/bulma-logo.png", :width => "112"}/
+    %a.navbar-item{:href => root_path}
+      %b.some{ style: 'font-family: "Bungee"; size: 20px' }
+        FARMA FÁCIL
     %a.navbar-burger.burger{"aria-expanded" => "false", "aria-label" => "menu", "data-target" => "navbarBasicExample", :role => "button"}
       %span{"aria-hidden" => "true"}
       %span{"aria-hidden" => "true"}
       %span{"aria-hidden" => "true"}
   #navbarBasicExample.navbar-menu
-    .navbar-start
-      %a.navbar-item{ href: root_path }
-        = fa_icon 'home fw', text: t('shared.home')
     .navbar-end
       - unless user_signed_in?
         .navbar-item
@@ -18,7 +16,7 @@
               = fa_icon 'user-plus fw'
               %strong= t('users.registrations.new.sign_up')
             %a{ href: '/users/sign_in', class: 'button is-light' }
-              = fa_icon 'sign-in fw'
+              = fa_icon 'sign-in-alt fw'
               = t('users.sessions.new.sign_in')
       - else
         - if current_user.has_role? :consumer
