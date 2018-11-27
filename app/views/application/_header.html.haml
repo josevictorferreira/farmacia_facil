@@ -25,13 +25,17 @@
           %a.navbar-item{ href: new_donation_path }
             = fa_icon 'donate fw'
             = t('shared.new_donation')
+        - elsif current_user.has_role? :drugstore
+          %a.navbar-item{ href: search_donation_index_path }
+            = fa_icon 'search fw'
+            = t('search_donation.index.title')
         - unless current_user.wallet.nil?
           .navbar-item
             = fa_icon 'hand-holding-usd fw'
             #{t('shared.points')}:
             &nbsp
             %strong.has-text-success
-              = current_user.wallet.balance
+              = current_user.wallet.get_current_points
         .navbar-item.has-dropdown.is-hoverable
           %a.navbar-link
             = fa_icon 'user fw'
@@ -41,6 +45,9 @@
               %a.navbar-item{ href: donations_path, class: 'navbar-item' }
                 = fa_icon 'donate fw'
                 = t('donations.my_donations')
+            %a.navbar-item{ href: bids_path, class: 'navbar-item' }
+              = fa_icon 'hand-holding-usd fw'
+              = t('bids.my_bids')
             %a.navbar-item
               = fa_icon 'question-circle fw'
               = t('shared.help')

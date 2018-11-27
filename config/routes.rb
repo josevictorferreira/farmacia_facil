@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :bids
+  get 'search_donation/index'
   resources :donations
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
+  post 'place_offer' => 'search_donation#place_offer'
+  post 'bids/accept' => 'bids#accept'
   devise_scope :user do
     get 'drugstores/sign_up' => "users/registrations#drugstore_register_new"
     post 'drugstores/sign_up' => "users/registrations#drugstore_register_create"

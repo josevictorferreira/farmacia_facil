@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Is accepted:
+  = @bid.is_accepted
+%p
+  %b Is cancelled:
+  = @bid.is_cancelled
+%p
+  %b Points:
+  = @bid.points
+%p
+  %b User:
+  = @bid.user
+%p
+  %b Donation:
+  = @bid.donation
+
+= link_to 'Edit', edit_bid_path(@bid)
+\|
+= link_to 'Back', bids_path

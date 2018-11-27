@@ -1,0 +1,42 @@
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
+
+%table.table.is-fullwidth.is-hoverable
+  %thead
+    %tr
+      %th=t('activerecord.attributes.bid.status')
+      %th=t('activerecord.attributes.bid.points')
+      %th=t('activerecord.attributes.bid.user')
+      %th=t('activerecord.attributes.bid.donator')
+      %th=t('activerecord.attributes.bid.medicine')
+      %th=t('activerecord.attributes.bid.quantity')
+      - if current_user.has_role? :drugstore
+        %th
+      - if current_user.has_role? :consumer
+        %th
+        %th
+
+  %tbody
+    - @bids.each do |bid|
+      %tr
+        %td= bid.status
+        %td= bid.points
+        %td= bid.user.name
+        %td= bid.donation.donator_name
+        %td= bid.donation.medicine_name
+        %td= bid.donation.quantity
+        - if current_user.has_role? :drugstore
+          - if bid.status == t('bids.waiting')
+            %td= link_to t('shared.cancel'), bid, method: :delete, data: { confirm: t('shared.are_you_sure') }
+          - else
+            %td
+        - if current_user.has_role? :consumer
+          - if bid.status == t('bids.accepted')
+            %td= bid.status
+            %td
+          - else
+            %td= link_to t('shared.accept'), '/bids/accept?bid_id=' + bid.id.to_s, method: :post, action: bids_accept_path, data: { bid_id: bid.id }
+            %td= link_to t('shared.reject'), bid, method: :delete, data: { confirm: t('shared.are_you_sure') }
+

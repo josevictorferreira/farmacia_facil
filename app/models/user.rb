@@ -19,6 +19,10 @@ class User < ApplicationRecord
     has_role?(:drugstore) ? first_name : first_name + ' ' + last_name
   end
 
+  def name_formatted
+    name + " de " + address.address_formatted
+  end
+
   protected
 
   def assign_default_role

@@ -1,0 +1,35 @@
+= content_for :title do
+  = t('.title')
+= content_for :subtitle do
+  = raw(t('.subtitle'))
+
+.columns
+  .column
+    .field.has-addons
+      .control
+        %input.input{:placeholder => t('.title'), :type => "text"}/
+      .control
+        %a.button.is-info
+          = t('shared.search')
+
+.columns
+  - @donations.each do |donation|
+    .column
+      = render partial: 'donation', locals: { donation: donation }
+
+:javascript
+  $(document).ready(function () {
+    $('.place-offer').on('click', function (event) {
+      const element = $(event.target).closest('.donation-item').find('.modal').first();
+      element.addClass('is-active')
+    });
+    $(".modal-close").click(function() {
+     $(".modal").removeClass("is-active");
+    });
+    $(".modal-cancel").click(function() {
+     $(".modal").removeClass("is-active");
+    });
+    $(".delete").click(function() {
+     $(".modal").removeClass("is-active");
+    });
+  });

@@ -1,5 +1,10 @@
 ---
 en:
+  date:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
   activerecord:
     attributes:
       user:
@@ -23,13 +28,25 @@ en:
         number: "Number"
         zipcode: "Zip Code"
       donation:
+        created_at: "Created At"
         quantity: "Quantity"
         description: "Description"
         shelf_life: "Shelf Life"
         has_packing: "Has Packing?"
+      bid:
+        is_accepted: "Accepted?"
+        is_cancelled: "Rejected?"
+        points: "Points"
+        user: "Drugstore"
+        donation: "Donation"
+        donator: "Donator"
+        medicine: "Medicine"
+        quantity: "Quantity"
+        status: "Status"
     models:
       medicine: "Medicine"
       address: "Address"
+      bid: "Bid"
   users:
     registrations:
       new:
@@ -62,6 +79,24 @@ en:
       title: "Donation Info"
       subtitle: "List of all donation informations."
     my_donations: "My Donations"
+  search_donation:
+    index:
+      title: "Search for Donations"
+      subtitle: "Make an search for user donations"
+      place_offer: "Place Offer"
+      donator_address: "Donator Address"
+      medicine_info: "Medicine Informations"
+      donator: "Donator Name"
+      offer: "Offer"
+  bids:
+    index:
+      title: "My Bids"
+      subtitle: "List of all my bids."
+    my_bids: "My Bids"
+    rejected: "Rejeitado"
+    accepted: "Aceito"
+    waiting: "Waiting"
+    insufficient_balance: "Insufficient Balance"
   footer:
     text: "<b>FarmáciaFácil</b> by <a href=\"/jose_linkedin\">José Victor Ferreira</a> and <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
@@ -76,6 +111,8 @@ en:
     show: "Show"
     edit: "Edit"
     destroy: "Destroy"
+    cancel: "Cancelar"
+    search: "Search"
     are_you_sure: "Are you sure?"
     "yes": "Yes"
     "no": "No"

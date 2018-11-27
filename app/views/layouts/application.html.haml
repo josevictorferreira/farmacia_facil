@@ -17,8 +17,14 @@
           %h2.subtitle
             = yield :subtitle
 
+
     .columns.is-mobile.is-centered
       .column.is-three-quarters-desktop
         %section.section
+          - flash.each do |key, value|
+            .notification{ :class => "is-#{key}" }
+              %button.delete{ :data => { :dismiss => "alert" } } x
+              %strong
+                = value
           = yield
     = render 'footer'

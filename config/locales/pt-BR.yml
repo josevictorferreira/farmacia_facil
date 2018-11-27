@@ -1,5 +1,10 @@
 ---
 pt-BR:
+  date:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
   activerecord:
     attributes:
       user:
@@ -23,13 +28,25 @@ pt-BR:
         number: "Número"
         zipcode: "CEP"
       donation:
+        created_at: "Criado Em"
         quantity: "Quantidade"
         description: "Descrição"
         shelf_life: "Validade"
         has_packing: "Possui Embalagem?"
+      bid:
+        is_accepted: "Foi aceito?"
+        is_cancelled: "Foi rejeitado?"
+        points: "Pontos"
+        user: "Farmácia"
+        donation: "Doação"
+        donator: "Doador"
+        medicine: "Medicamento"
+        quantity: "Quantidade"
+        status: "Status"
     models:
       medicine: "Remédio"
       address: "Endereço"
+      bid: "Lance"
   users:
     registrations:
       new:
@@ -62,6 +79,26 @@ pt-BR:
       title: "Informações da Doação"
       subtitle: "Lista de todas as informações da doação."
     my_donations: "Minhas Doações"
+  search_donation:
+    index:
+      title: "Procure por Doações"
+      subtitle: "Faça uma busca por doações de outros usuários"
+      place_offer: "Fazer oferta"
+      donator_address: "Endereço do Doador"
+      medicine_info: "Informações do Medicamento"
+      donator: "Nome do Doador"
+      offer: "Oferta"
+  bids:
+    index:
+      title: "Meus Lances"
+      subtitle: "Lista de todos os meus lances."
+    my_bids: "Meus Lances"
+    rejected: "Rejeitado"
+    accepted: "Aceito"
+    waiting: "Aguardando Resposta do Usuário"
+    insufficient_balance: "Saldo Insuficiente"
+    accepted_message: "Lance aceito com sucesso!"
+    cant_accept_message: "Não foi possível aceitar lance!"
   footer:
     text: "<b>FarmáciaFácil</b> por <a href=\"/jose_linkedin\">José Victor Ferreira</a> e <a href=\"/andre_linkedin\">André Vieira Dias</a>"
   shared:
@@ -76,6 +113,10 @@ pt-BR:
     show: "Mostrar"
     edit: "Editar"
     destroy: "Remover"
+    cancel: "Cancelar"
     are_you_sure: "Você tem certeza?"
+    accept: "Aceitar"
+    reject: "Rejeitar"
+    search: "Procurar"
     "yes": "Sim"
     "no": "Não"

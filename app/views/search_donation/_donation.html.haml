@@ -1,0 +1,108 @@
+.donation-item
+  .card
+    %header.card-header
+      %h1.card-header-title
+        = donation.medicine_name
+      %i.card-header-subtitle
+    .card-content
+      .content
+        %p
+          = donation.description
+        %b
+          = t('activerecord.attributes.donation.quantity')
+        = donation.quantity
+        %br
+        %b
+          = t('activerecord.attributes.donation.has_packing')
+        = human_boolean donation.has_packing
+        %br
+        %b
+          = t('activerecord.attributes.donation.shelf_life')
+        = l(donation.shelf_life)
+        %br
+        %b
+          = t('activerecord.attributes.donation.created_at')
+        = l(donation.created_at)
+        %br/
+        %b
+          = t('activerecord.attributes.bid.donator')
+        = donation.user.name_formatted
+        %br
+    %footer.card-footer
+      - if donation.bid_status(current_user)
+        .card-footer-item
+          = donation.bid_status(current_user)
+      - else
+        %a.card-footer-item{class: "place-offer"}= t('search_donation.index.place_offer')
+
+  .modal
+    %form{ method: 'POST', id: 'form_offer_' + donation.id.to_s, action: place_offer_path }
+      .modal-background
+      .modal-card
+        %header.modal-card-head
+          %p.modal-card-title
+            = donation.medicine_name
+          %button.delete{"aria-label" => "close"}
+        %section.modal-card-body
+          .content
+            %h2=t('search_donation.index.medicine_info')
+            %b
+              = t('search_donation.index.donator')
+            = donation.donator_name
+            %br/
+            %b
+              = t('activerecord.models.medicine')
+            = donation.medicine_name
+            %br/
+            %b
+              = t('activerecord.attributes.donation.description')
+            = donation.description
+            %br/
+            %b
+              = t('activerecord.attributes.donation.quantity')
+            = donation.quantity
+            %br
+            %b
+              = t('activerecord.attributes.donation.has_packing')
+            = human_boolean donation.has_packing
+            %br
+            %b
+              = t('activerecord.attributes.donation.shelf_life')
+            = l(donation.shelf_life)
+            %br
+            %b
+              = t('activerecord.attributes.donation.created_at')
+            = l(donation.created_at)
+            %br/
+            %h2=t('search_donation.index.donator_address')
+            %b
+              = t('activerecord.attributes.address.city')
+            = donation.user.address.city
+            %br/
+            %b
+              = t('activerecord.attributes.address.state')
+            = donation.user.address.state
+            %br/
+            %b
+              = t('activerecord.attributes.address.zipcode')
+            = donation.user.address.zipcode
+            %br/
+            %b
+              = t('activerecord.attributes.address.street')
+            = donation.user.address.street
+            %br/
+            %b
+              = t('activerecord.attributes.address.number')
+            = donation.user.address.number
+            %br/
+            %h2= t('search_donation.index.offer')
+            = hidden_field_tag :authenticity_token, form_authenticity_token
+            = hidden_field_tag :donation_id, donation.id
+            .field
+            .field
+              %label.label= t('shared.points')
+              %input{ type: "number", class: 'input', name: 'points' }
+            %br/
+        %footer.modal-card-foot
+          %button.button.is-success=t('search_donation.index.place_offer')
+          %button.button.modal-cancel=t('shared.cancel')

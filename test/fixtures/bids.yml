@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_accepted: false
+  is_cancelled: false
+  points: 1
+  user: one
+  donation: one
+
+two:
+  is_accepted: false
+  is_cancelled: false
+  points: 1
+  user: two
+  donation: two
